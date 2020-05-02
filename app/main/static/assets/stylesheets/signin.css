@@ -1,0 +1,115 @@
+/*
+================================================
+					CLEARFIX
+================================================
+*/
+
+.group:before,
+.group:after
+	{
+		content: "";
+		display: table;
+	}
+
+.group:after
+	{
+		clear: both;
+	}
+
+.group
+	{
+		clear: both;
+		*zoom: 1;
+	}
+
+/*
+================================================
+				CUSTOM STYLES
+================================================
+*/
+
+body
+	{
+		font: 300 16px/22px "Lato", "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-seriff;
+		color: #444;
+		-webkit-font-smoothing: antialiased;
+		margin: 0;
+	}
+
+/*
+================================================
+				LOGIN ROW & COL
+================================================
+*/
+
+.split
+    {
+        height: 100%;
+        position: fixed;
+        z-index: 1;
+        top: 0;
+        overflow-x: hidden;
+    }
+
+.timer-left
+    {
+       width: 65%;
+       left: 0;
+       background: linear-gradient(to right,#17a77b,#74c947);
+       color: #fff;
+       font-size: 32px;
+       line-height: 1.2;
+    }
+
+.login-right
+    {
+        width: 35%;
+        right: 0;
+        background: #fff;
+        color: #222;
+    }
+
+.login-right h5
+    {
+        font-weight: normal;
+        font-size: 14px;
+    }
+
+.login-right a
+    {
+        color: #222;
+        border-bottom: 1px solid #222;
+        text-decoration: none;
+    }
+
+.centered
+    {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        text-align: center;
+    }
+
+/*
+================================================
+					BUTTON
+================================================
+*/
+
+.btn
+	{
+		border-radius: 5px;
+		display: inline-block;
+		background: #fff;
+		text-transform: uppercase;
+		cursor: pointer;
+		letter-spacing: .5px;
+		margin: 5px;
+	}
+
+.btn-alt
+	{
+		border: 1px solid #dfe2e5;
+		padding: 10px 30px;
+	}
