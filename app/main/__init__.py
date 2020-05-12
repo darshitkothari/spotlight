@@ -3,11 +3,13 @@ from flask_sqlalchemy import SQLAlchemy
 from flask_bcrypt import Bcrypt
 from flask_login import LoginManager
 from .config import config_by_name
+from flask_admin import Admin
 
 # Creating Extensions
 db = SQLAlchemy()
 login_manager = LoginManager()
 flask_bcrypt = Bcrypt()
+# admin = Admin()
 
 
 # Create app function based on the paramter from config_by_name and returns app instance
@@ -17,4 +19,5 @@ def create_app(config_name):
     db.init_app(app)
     login_manager.init_app(app)
     flask_bcrypt.init_app(app)
+    # admin.init_app(app)
     return app

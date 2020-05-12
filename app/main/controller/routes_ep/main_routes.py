@@ -9,5 +9,5 @@ main = Blueprint('main', __name__)
 
 @main.route('/')
 @login_required
-def index():
+def main_index():
     return render_template("main/main_index.html")

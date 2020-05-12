@@ -17,3 +17,8 @@ def forbidden(e):
 @error.app_errorhandler(500)
 def internal_server_error(e):
     return render_template("error/500.html"), 500
+
+
+@error.app_errorhandler(401)
+def internal_server_error(e):
+    return render_template("error/500.html"), 401

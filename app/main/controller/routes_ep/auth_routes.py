@@ -30,7 +30,7 @@ def load_user(unique_id):
 @auth.route('/login')
 def login():
     if current_user.is_authenticated:
-        return redirect(url_for('main.index'))
+        return redirect(url_for('main.main_index'))
     else:
         # Find out what URL to hit for Google login
         google_provider_cfg = get_google_provider_cfg()
@@ -83,7 +83,7 @@ def callback():
     # Begin user session by logging the user in
     login_user(User.query.get(data['unique_id']))
     # Send user back to homepage
-    return redirect(url_for("main.index"))
+    return redirect(url_for("main.main_index"))
 
 
 @login_manager.unauthorized_handler
@@ -96,7 +96,7 @@ def unauthorized():
 @login_required
 def logout():
     logout_user()
-    return redirect(url_for("main.index"))
+    return redirect(url_for("main.main_index"))
 
 
 def get_google_provider_cfg():
