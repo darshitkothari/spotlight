@@ -19,7 +19,7 @@
         <!--StyleSheet for Social Media Connect Icons i tag-->
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
-        <!-- Stylesheet for bootstrap data tables  -->
+        <!-- Stylesheet for bootstrap data tables -->
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
         <link rel="stylesheet" href="https://cdn.datatables.net/1.10.18/css/dataTables.bootstrap4.min.css">
 
@@ -41,18 +41,47 @@
                 {% include "common/adm_header.html" %}
 
                 <div class="container" style="width:80%;">
-                    <table class="table" id="dataTable" width="100%" cellspacing="0">
+                    <table class="table table-striped table-bordered" id="dataTable" width="100%" cellspacing="0">
                         <thead>
                             <tr>
-                                <th> Sr No </th>
+                                <th> Emp ID </th>
                                 <th> Name </th>
                                 <th> Email </th>
+                                <th> Designation </th>
+                                <th> Department </th>
+                                <th> Location </th>
+                                <th> Status </th>
                                 <th> Created On </th>
                             </tr>
                         </thead>
                         <tbody>
-
+                            {% if len > 0 %}
+                                {% for i in range(0, len) %}
+                                    <tr>
+                                        <td> {{ i + 1 }} </td>
+                                        <td> {{ data[i]['name'] }} </td>
+                                        <td> {{ data[i]['email'] }} </td>
+                                        <td> Dummy Desig </td>
+                                        <td> Dummy Dept </td>
+                                        <td> Mumbai </td>
+                                        <td> {{ data[i]['is_active'] }} </td>
+                                        <td> {{ data[i]['created_on'] }} </td>
+                                    </tr>
+                                {% endfor %}
+                            {% endif %}
                         </tbody>
+                        <tfoot>
+                            <tr>
+                                <th> Emp ID </th>
+                                <th> Name </th>
+                                <th> Email </th>
+                                <th> Designation </th>
+                                <th> Department </th>
+                                <th> Location </th>
+                                <th> Status </th>
+                                <th> Created On </th>
+                            </tr>
+                        </tfoot>
                     </table>
                 </div>
 

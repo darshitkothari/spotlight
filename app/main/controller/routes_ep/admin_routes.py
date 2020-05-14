@@ -3,6 +3,8 @@ from flask import render_template, request,\
 from flask_login import login_user, logout_user,\
     login_required, current_user
 from app.main.services.user_service import UserHelper
+from app.main.controller.api_ep.user_api import UserList
+import requests
 
 # Defining main related route Blueprint: 'main'
 admin = Blueprint('admin', __name__)
@@ -19,8 +21,8 @@ def admin_index():
 @login_required
 def ui_users():
     if current_user.is_admin:
-        users = UserHelper.get_all_users()
-        return render_template('admin/users.html', data=users)
+        users = requests.get('https://ahwspl.policy.com:5000/rest/api/v1/user', verify=False).json()['data']
+        return render_template('admin/users.html', data=users, len=len(users))
 
 
 @admin.route('/admin/ui-policies')

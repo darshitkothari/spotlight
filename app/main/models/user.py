@@ -16,6 +16,8 @@ class User(db.Model, UserMixin):
     created_on = db.Column(db.DateTime, server_default=db.func.now())
     updated_on = db.Column(db.DateTime, server_default=db.func.now(), server_onupdate=db.func.now())
     is_active = db.Column(db.Boolean, nullable=False, default=True)
+    policy = db.relationship('Policy', backref='user', lazy=True)
+    department = db.relationship('Department', backref='user', lazy=True)
 
     # UserMixin Methods
     def is_active(self):
@@ -39,4 +41,4 @@ class User(db.Model, UserMixin):
         return self.admin
 
     def __repr__(self):
-        return "<User '{}'>".format(self.email)
+        return "<User '{}'>".format(self.unique_id)

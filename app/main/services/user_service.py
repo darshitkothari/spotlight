@@ -24,3 +24,11 @@ class UserHelper:
     @staticmethod
     def get_all_users():
         return User.query.all()
+
+    @staticmethod
+    def update_user(unique_id, data):
+        pass
+
+    @staticmethod
+    def delete_user(unique_id):
+        pass
