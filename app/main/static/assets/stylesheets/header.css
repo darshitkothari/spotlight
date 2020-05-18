@@ -1,0 +1,212 @@
+/*
+================================================
+					CLEARFIX
+================================================
+*/
+
+.group:before,
+.group:after
+	{
+		content: "";
+		display: table;
+	}
+
+.group:after
+	{
+		clear: both;
+	}
+
+.group
+	{
+		clear: both;
+		*zoom: 1;
+	}
+
+/*
+================================================
+					GRID
+================================================
+*/
+
+*,
+*:before,
+*:after
+	{
+		-webkit-box-sizing: border-box;
+		-moz-box-sizing: border-box;
+         box-sizing: border-box;
+	}
+
+header
+	{
+		height: 70px;
+		transition: top 0.2s ease-in-out;
+		position: fixed;
+		width: 100%;
+		top: 0;
+		background: #fff;
+		z-index: 1;
+	}
+
+.header-container
+	{
+		margin: 0 auto;
+	}
+
+/*
+================================================
+				CUSTOM STYLES
+================================================
+*/
+
+body
+	{
+		font: 300 16px/22px "Lato", "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-seriff;
+		color: #444;
+		-webkit-font-smoothing: antialiased;
+		margin: 0;
+	}
+
+/*
+================================================
+				PRIMARY HEADER
+================================================
+*/
+
+.primary-header
+    {
+        left: 0px;
+        right: 0px;
+        padding: 10px 100px;
+        vertical-align: middle;
+    }
+
+.primary-header a
+	{
+		color: #222;
+		text-decoration: none;
+	}
+
+.primary-header a:hover
+	{
+		top: -10px;
+		color: #222;
+	}
+
+.logo
+	{
+		float: left;
+		letter-spacing: 0.5px;
+		font-size: 30px;
+		font-weight: normal;
+		padding: 0 10px;
+	}
+
+/*
+================================================
+					NAVIGATION
+================================================
+*/
+
+.nav
+	{
+		text-align: center;
+		display: block;
+	}
+
+.primary-nav
+	{
+		font-size: 16px;
+		text-transform: none;
+		letter-spacing: .5px;
+		color: #666666;
+		float: right;
+	}
+
+
+.primary-nav a
+    {
+        transition: top ease 0.5s;
+		position: relative;
+  		top: 0;
+  		margin-right: 20px;
+    }
+
+.nav-up
+	{
+		top: -70px;
+	}
+
+.nav ul
+    {
+        margin: 10px 0 10px 0;
+        padding: 0;
+    }
+
+.nav li
+    {
+        display: inline-block;
+        vertical-align: top;
+        padding: 5px;
+        font-size: 16px;
+        margin: 5px;
+    }
+
+/*
+================================================
+					DROPDOWN
+================================================
+*/
+
+.dropdown
+	{
+		position: relative;
+		display: inline-block;
+	}
+
+.user-img img
+    {
+        height: 30px;
+        width: 30px;
+        border-radius: 50%
+    }
+
+.dropdown-content
+	{
+		display: none;
+		position: absolute;
+		z-index: 1;
+		white-space: nowrap;
+		float: left;
+		box-shadow: 0 4px 11px 0 #d5e0ea
+		background: #fff;
+	}
+
+.dropdown-content a
+	{
+		display: block;
+		text-decoration: none;
+		text-align: left;
+		text-transform: None;
+		padding: 0 0 0px 0;
+		margin:  0 0 5px 0;
+        color: #222;
+	}
+
+.dropdown-content a:hover
+	{
+		color: #222;
+		top: 0px;
+	}
+
+.dropdown:hover .dropdown-content
+	{
+		display: block;
+	}
+
+.dropdown-content h5
+    {
+        padding: 0px;
+		margin: 0px;
+		font-weight: 500;
+    }
