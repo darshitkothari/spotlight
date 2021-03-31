@@ -5,7 +5,7 @@ from app.main.models.user import User
 class UserHelper:
     @staticmethod
     def save_new_user(data):
-        user = User.query.filter_by(unique_id=data['unique_id']).first()
+        user = User.query.filter_by(email=data['email']).first()
         if not user:
             new_user = User(unique_id=data['unique_id'], name=data['name'], email=data['email'],
                             profile_pic=data['profile_pic'])

@@ -27,5 +27,7 @@ class DepartmentDto:
 class PolicyDto:
     api = Namespace('policy', description='policy related operations')
     policy = api.model('policy', {
-
+        'id':  fields.Integer(required=False, description='policy identifier'),
+        'title': fields.String(required=True, description='policy title'),
+        'fk_department_id': fields.Integer(required=False, description='department identifier'),
     })
